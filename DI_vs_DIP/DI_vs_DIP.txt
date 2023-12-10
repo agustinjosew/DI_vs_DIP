@@ -1,0 +1,4 @@
+﻿Aqui vamos a ver:
+1- que diferencias hay entre inversion e inyeccion de dependencias?  
+2- a que principios corresponden? 
+3- porque es facil confundirlos a veces en una entrevista tecnica?
