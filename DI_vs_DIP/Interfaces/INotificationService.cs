@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace DI_vs_DIP.Interfaces
 {
-    internal interface INotificationService
+    public interface INotificationService
     {
+        void Send(string message);
     }
 }
