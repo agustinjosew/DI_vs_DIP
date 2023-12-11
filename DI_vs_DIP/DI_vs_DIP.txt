@@ -2,3 +2,25 @@
 1- que diferencias hay entre inversion e inyeccion de dependencias?  
 2- a que principios corresponden? 
 3- porque es facil confundirlos a veces en una entrevista tecnica?
+
+Esta solucion PoC esta realizada en base al uso del Patron de Estrategia.
+Por qué el Patrón de Estrategia es Apropiado:
+Separación de Estrategias: Permite separar las diferentes formas de enviar notificaciones (como email, SMS) en clases individuales, cada una implementando una 
+interfaz común (INotificationService).
+Esto facilita añadir nuevos métodos de notificación en el futuro.
+Intercambiable: Las estrategias de notificación pueden cambiarse dinámicamente en tiempo de ejecución, lo que proporciona una gran flexibilidad.
+
+Estructura del Proyecto:
+Interfaces: 
+	INotificationService: Define la operación para enviar notificaciones.
+
+Implementaciones Concretas:
+	EmailNotificationService: Implementa INotificationService para enviar notificaciones por email.
+	SmsNotificationService: Otra implementación para enviar SMS.
+
+Clase Cliente:
+	NotificationManager: Utiliza INotificationService para enviar notificaciones. 
+	No está acoplada a una implementación concreta, lo que facilita la prueba y extensión.
+
+Inyección de Dependencias:
+	Utiliza DI para proporcionar la implementación concreta de INotificationService a NotificationManager.
